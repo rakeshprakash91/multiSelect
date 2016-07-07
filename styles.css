@@ -1,0 +1,60 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	padding: 30px;
+}
+div {
+	margin: 0 auto;
+	height: 200px;
+	width: 600px;
+}
+ul.multiDropDownSelect {
+	border: 1px solid darkgray;
+}
+ul.multiDropDown,
+ul.multiDropDownSelect {
+	cursor: pointer;
+	background-color: white;
+	color: #ff8f00;
+	width: 220px;
+	position: relative;
+}
+ul.multiDropDown li,
+ul.multiDropDownSelect li {
+	line-height: 15px;
+	list-style-type: none;
+	padding: 10px;
+	border-width: 0 1px 1px;
+	border-style: solid;
+	border-color: darkgray;
+}
+ul.multiDropDownSelect li {
+	border: none;
+	overflow: hidden;
+	width: 190px;
+}
+ul.multiDropDown {
+	display: none;
+}
+ul.multiDropDown li label {
+	padding: 0 10px;
+	position: relative;
+	top: -1px;
+	cursor: pointer;
+}
+input[type="checkbox"] {
+	cursor: pointer;
+}
+.multicaret {
+	border-width: 5px;
+	border-color: #ff8f00 transparent transparent transparent;
+	border-style: solid;
+	position: relative;
+	top: 40px;
+	right: -200px;
+	cursor: pointer;
+	z-index: 100;
+}
