@@ -33,9 +33,6 @@ ul.multiDropDown li label {
 	top: -1px;
 	cursor: pointer;
 }
-input[type="checkbox"] {
-	cursor: pointer;
-}
 .multicaret {
 	border-width: 5px;
 	border-color: #ff8f00 transparent transparent transparent;
