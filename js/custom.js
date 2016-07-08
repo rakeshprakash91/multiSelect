@@ -1,14 +1,6 @@
 var selectedVal = [];
 
-function showHideOptions() {
-	if (window.getComputedStyle(this.nextElementSibling).display == "none") {
-		this.nextElementSibling.style.display = "block";
-	} else {
-		this.nextElementSibling.style.display = "none";
-	}
-}
-
-
+//initialization
 (function () {
 	var selectElement = document.querySelectorAll('.multiDropDownSelect');
 	for (var i = 0; i < selectElement.length; i++) {
@@ -27,6 +19,14 @@ function showHideOptions() {
 	}
 })();
 
+function showHideOptions() {
+	if (window.getComputedStyle(this.nextElementSibling).display == "none") {
+		this.nextElementSibling.style.display = "block";
+	} else {
+		this.nextElementSibling.style.display = "none";
+	}
+}
+
 function processClick() {
 	var lbl = this.children[0].innerHTML;
 	updateSelectedValues(lbl, this, Number(this.parentElement.previousElementSibling.getAttribute('index')));
@@ -34,7 +34,6 @@ function processClick() {
 
 function updateSelectedValues(val, elm, index) {
 	var html = "";
-	debugger
 	if (selectedVal[index]["" + val]) {
 		delete selectedVal[index]["" + val];
 		elm.className = "unchecked";
