@@ -1,4 +1,4 @@
-var selectedVal = {};
+var selectedVal = [];
 
 function showHideOptions() {
 	if (window.getComputedStyle(this.nextElementSibling).display == "none") {
@@ -14,6 +14,8 @@ function showHideOptions() {
 	for (var i = 0; i < selectElement.length; i++) {
 		var caretElem = document.createElement('span');
 		caretElem.setAttribute('class', 'multicaret');
+		selectElement[i].setAttribute('index', i);
+		selectedVal[i] = {};
 		selectElement[i].parentElement.insertBefore(caretElem, selectElement[i]);
 		selectElement[i].addEventListener('click', showHideOptions);
 
@@ -27,20 +29,21 @@ function showHideOptions() {
 
 function processClick() {
 	var lbl = this.children[0].innerHTML;
-	updateSelectedValues(lbl, this);
+	updateSelectedValues(lbl, this, Number(this.parentElement.previousElementSibling.getAttribute('index')));
 }
 
-function updateSelectedValues(val, elm) {
+function updateSelectedValues(val, elm, index) {
 	var html = "";
-	if (selectedVal["" + val]) {
-		delete selectedVal["" + val];
+	debugger
+	if (selectedVal[index]["" + val]) {
+		delete selectedVal[index]["" + val];
 		elm.className = "unchecked";
 	} else {
-		selectedVal["" + val] = val;
+		selectedVal[index]["" + val] = val;
 		elm.className = "checked";
 	}
-	if (Object.keys(selectedVal).length) {
-		for (key in selectedVal) {
+	if (Object.keys(selectedVal[index]).length) {
+		for (key in selectedVal[index]) {
 			html += key + ",";
 		}
 		elm.parentElement.previousElementSibling.children[0].innerHTML = html.replace(/,\s*$/, "");
