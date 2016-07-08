@@ -46,20 +46,10 @@ input[type="checkbox"] {
 	z-index: 100;
 }
 .unchecked:before {
-	content: "";
-	position: relative;
-	height: 14px;
-	width: 14px;
-	border: 1px solid;
-	display: inline-block;
-	font-size: 22px;
+	content: "\2610";
+	font-size: 19px;
 }
 .checked:before {
-	content: "\2713";
-	position: relative;
-	height: 14px;
-	width: 14px;
-	border: 1px solid;
-	display: inline-block;
-	font-size: 22px;
+	content: "\2611";
+	font-size: 19px;
 }
