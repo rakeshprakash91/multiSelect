@@ -43,7 +43,7 @@ function updateSelectedValues(val, elm, index) {
 	}
 	if (Object.keys(selectedVal[index]).length) {
 		for (key in selectedVal[index]) {
-			html += key + ",";
+			html += key + ", ";
 		}
 		elm.parentElement.previousElementSibling.children[0].innerHTML = html.replace(/,\s*$/, "");
 	} else {
