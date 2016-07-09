@@ -2,16 +2,28 @@ var selectedVal = [];
 
 //initialization
 (function () {
-	var selectElement = document.querySelectorAll('.multiDropDownSelect');
+
+	var selectElement = document.querySelectorAll('.multiDropDown');
 	for (var i = 0; i < selectElement.length; i++) {
+
+		//create top ul li
+		var ul = document.createElement("ul");
+		ul.setAttribute('class', 'multiDropDownSelect');
+		var li = document.createElement('li');
+		li.innerHTML = "Select"
+		ul.appendChild(li);
+
+		selectElement[i].parentElement.insertBefore(ul, selectElement[i]);
+
+
 		var caretElem = document.createElement('span');
 		caretElem.setAttribute('class', 'multicaret');
-		selectElement[i].setAttribute('index', i);
+		ul.setAttribute('index', i);
 		selectedVal[i] = {};
-		selectElement[i].parentElement.insertBefore(caretElem, selectElement[i]);
-		selectElement[i].addEventListener('click', showHideOptions);
+		ul.parentElement.insertBefore(caretElem, ul);
+		ul.addEventListener('click', showHideOptions);
 
-		var liArray = selectElement[i].nextElementSibling.children;
+		var liArray = selectElement[i].children;
 		for (var j = 0; j < liArray.length; j++) {
 			liArray[j].className = "unchecked"
 			liArray[j].addEventListener('click', processClick);
