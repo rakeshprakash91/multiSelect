@@ -51,3 +51,9 @@ ul.multiDropDown li label {
 	content: "\2611";
 	font-size: 19px;
 }
+.checked {
+	background-color: #ffe35c;
+}
+.unchecked {
+	background-color: white;
+}
