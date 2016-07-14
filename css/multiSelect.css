@@ -1,10 +1,11 @@
 .multiDropDownSelect {
 	border: 1px solid darkgray;
 	height: 36px;
-	width: 198px;
 	white-space: nowrap;
 	overflow: hidden;
 	padding: 0 25px 0 10px;
+	font-family: serif;
+	font-size: 15px;
 }
 ul.multiDropDown,
 .multiDropDownSelect {
