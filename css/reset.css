@@ -5,8 +5,11 @@
 }
 body {
 	padding: 30px;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
 }
 div {
 	margin: 0 auto;
-	width: 600px;
+	padding-top: 100px;
 }
