@@ -1,16 +1,20 @@
-ul.multiDropDownSelect {
+.multiDropDownSelect {
 	border: 1px solid darkgray;
+	height: 36px;
+	width: 198px;
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 0 25px 0 10px;
 }
 ul.multiDropDown,
-ul.multiDropDownSelect {
+.multiDropDownSelect {
 	cursor: pointer;
 	background-color: white;
 	color: #ff8f00;
 	width: 220px;
 	position: relative;
 }
-ul.multiDropDown li,
-ul.multiDropDownSelect li {
+ul.multiDropDown li {
 	line-height: 15px;
 	list-style-type: none;
 	padding: 10px;
@@ -18,14 +22,9 @@ ul.multiDropDownSelect li {
 	border-style: solid;
 	border-color: darkgray;
 }
-ul.multiDropDownSelect li {
-	border: none;
-	overflow: hidden;
-	width: 190px;
-	white-space: nowrap;
-}
 ul.multiDropDown {
 	display: none;
+	left: 10px;
 }
 ul.multiDropDown li label {
 	padding: 0 10px;
@@ -38,8 +37,8 @@ ul.multiDropDown li label {
 	border-color: #ff8f00 transparent transparent transparent;
 	border-style: solid;
 	position: relative;
-	top: 40px;
-	right: -200px;
+	top: 14px;
+	right: -210px;
 	cursor: pointer;
 	z-index: 100;
 }

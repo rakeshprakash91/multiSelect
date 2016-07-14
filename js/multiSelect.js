@@ -6,22 +6,21 @@ var selectedVal = [];
 	var selectElement = document.querySelectorAll('.multiDropDown');
 	for (var i = 0; i < selectElement.length; i++) {
 
-		//create top ul li
-		var ul = document.createElement("ul");
-		ul.setAttribute('class', 'multiDropDownSelect');
-		var li = document.createElement('li');
-		li.innerHTML = "Select"
-		ul.appendChild(li);
+		//create top text field
+		var txtField = document.createElement("input");
+		txtField.setAttribute("type", "text");
+		txtField.setAttribute('class', 'multiDropDownSelect');
+		txtField.setAttribute("readonly", "readonly");
+		txtField.setAttribute("value", "Select");
+		selectElement[i].parentElement.insertBefore(txtField, selectElement[i]);
 
-		selectElement[i].parentElement.insertBefore(ul, selectElement[i]);
-
-
+		//dropdown arrow creation
 		var caretElem = document.createElement('span');
 		caretElem.setAttribute('class', 'multicaret');
-		ul.setAttribute('index', i);
+		txtField.setAttribute('index', i);
 		selectedVal[i] = {};
-		ul.parentElement.insertBefore(caretElem, ul);
-		ul.addEventListener('click', showHideOptions);
+		txtField.parentElement.insertBefore(caretElem, txtField);
+		txtField.addEventListener('click', showHideOptions);
 
 		var liArray = selectElement[i].children;
 		for (var j = 0; j < liArray.length; j++) {
@@ -57,8 +56,8 @@ function updateSelectedValues(val, elm, index) {
 		for (key in selectedVal[index]) {
 			html += key + ", ";
 		}
-		elm.parentElement.previousElementSibling.children[0].innerHTML = html.replace(/,\s*$/, "");
+		elm.parentElement.previousElementSibling.value = html.replace(/,\s*$/, "");
 	} else {
-		elm.parentElement.previousElementSibling.children[0].innerHTML = "Select";
+		elm.parentElement.previousElementSibling.value = "Select";
 	}
 }
