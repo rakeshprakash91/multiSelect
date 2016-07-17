@@ -25,7 +25,7 @@ ul.multiDropDown li {
 }
 ul.multiDropDown {
 	display: none;
-	left: 10px;
+	left: 9px;
 }
 ul.multiDropDown li label {
 	padding: 0 10px;
