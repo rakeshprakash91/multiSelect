@@ -5,11 +5,9 @@
 }
 body {
 	padding: 30px;
-	display: flex;
-	justify-content: center;
-	flex-direction: row;
 }
 div {
+	width: 300px;
 	margin: 0 auto;
 	padding-top: 100px;
 }
