@@ -1,23 +1,16 @@
-.multiDropDownSelect {
+ul.multiDropDownSelect {
 	border: 1px solid darkgray;
-	height: 36px;
-	white-space: nowrap;
-	overflow: hidden;
-	padding: 0 25px 0 10px;
-	font-family: serif;
-	font-size: 15px;
 }
-
 ul.multiDropDown,
-.multiDropDownSelect {
+ul.multiDropDownSelect {
 	cursor: pointer;
 	background-color: white;
 	color: #ff8f00;
 	width: 220px;
 	position: relative;
 }
-
-ul.multiDropDown li {
+ul.multiDropDown li,
+ul.multiDropDownSelect li {
 	line-height: 15px;
 	list-style-type: none;
 	padding: 10px;
@@ -25,44 +18,42 @@ ul.multiDropDown li {
 	border-style: solid;
 	border-color: darkgray;
 }
-
+ul.multiDropDownSelect li {
+	border: none;
+	overflow: hidden;
+	width: 190px;
+	white-space: nowrap;
+}
 ul.multiDropDown {
 	display: none;
-	left: 0.6em;
 }
-
 ul.multiDropDown li label {
 	padding: 0 10px;
 	position: relative;
 	top: -1px;
 	cursor: pointer;
 }
-
 .multicaret {
 	border-width: 5px;
 	border-color: #ff8f00 transparent transparent transparent;
 	border-style: solid;
 	position: relative;
-	top: 14px;
-	right: -210px;
+	top: 40px;
+	right: -200px;
 	cursor: pointer;
 	z-index: 100;
 }
-
 .unchecked:before {
 	content: "\2610";
 	font-size: 19px;
 }
-
 .checked:before {
 	content: "\2611";
 	font-size: 19px;
 }
-
 .checked {
 	background-color: #fbf0ba;
 }
-
 .unchecked {
 	background-color: white;
 }
